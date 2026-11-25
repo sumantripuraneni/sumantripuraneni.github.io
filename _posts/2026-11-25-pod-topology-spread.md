@@ -205,9 +205,9 @@ do have. With the cluster autoscaler, it pushes new capacity into the missing zo
 No cloud zones on bare metal, but you still have racks, power feeds and top-of-rack switches that fail together. Label the nodes yourself:
 
 ```bash
-oc label node worker-01 worker-02 topology.example.com/rack=rack-a
-oc label node worker-03 worker-04 topology.example.com/rack=rack-b
-oc label node worker-05 worker-06 topology.example.com/rack=rack-c
+kubectl label node worker-01 worker-02 topology.example.com/rack=rack-a
+kubectl label node worker-03 worker-04 topology.example.com/rack=rack-b
+kubectl label node worker-05 worker-06 topology.example.com/rack=rack-c
 ```
 
 Then use `topologyKey: topology.example.com/rack`. A rack losing power no longer takes a service down with it.
