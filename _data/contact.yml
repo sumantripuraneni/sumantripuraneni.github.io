@@ -2,7 +2,6 @@
 
 - type: github
   icon: "fab fa-github"
-  url: https://github.com/sumantripuraneni/
 
 - type: email
   icon: "fas fa-envelope"
