@@ -3,6 +3,10 @@
 - type: github
   icon: "fab fa-github"
 
+- type: linkedin
+  icon: 'fab fa-linkedin'   
+  url:  'https://www.linkedin.com/in/sumant-rh/'            
+
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
@@ -11,6 +15,4 @@
   icon: "fas fa-rss"
   noblank: true
 
-- type: linkedin
-  icon: 'fab fa-linkedin'   
-  url:  'https://www.linkedin.com/in/sumant-rh/'          
+
