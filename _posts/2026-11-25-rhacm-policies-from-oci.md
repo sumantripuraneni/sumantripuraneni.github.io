@@ -267,11 +267,11 @@ Clusters can read releases. They can never publish one.
 COPYFILE_DISABLE=1 tar --no-xattrs --exclude '._*' --exclude '.DS_Store' \
   -czf acm-policies.tgz base
 
-oras login quay.io -u '<quay-org>+rhacm_policies_push' \
+oras login quay.io -u 'sumantripuraneni+rhacm_policies_push' \
   --registry-config ~/.config/oras/auth.json
 
 oras push --registry-config ~/.config/oras/auth.json \
-  quay.io/<quay-org>/rhacm-cluster-policies:1.0.0 \
+  quay.io/sumantripuraneni/rhacm-cluster-policies:1.0.0 \
   acm-policies.tgz:application/vnd.oci.image.layer.v1.tar+gzip
 ```
 
@@ -292,8 +292,8 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: oci
-  url: oci://quay.io/<quay-org>/rhacm-cluster-policies
-  username: <quay-org>+rhacm_policies_pull
+  url: oci://quay.io/sumantripuraneni/rhacm-cluster-policies
+  username: sumantripuraneni+rhacm_policies_pull
   password: <pull-robot-token>
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -315,7 +315,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: oci://quay.io/<quay-org>/rhacm-cluster-policies
+        repoURL: oci://quay.io/sumantripuraneni/rhacm-cluster-policies
         targetRevision: 1.0.0
         path: '{{.path}}'
       destination:
@@ -353,7 +353,7 @@ Edit, re-tar, push a new tag, bump `targetRevision`:
 
 ```bash
 oras push --registry-config ~/.config/oras/auth.json \
-  quay.io/<quay-org>/rhacm-cluster-policies:1.0.1 \
+  quay.io/sumantripuraneni/rhacm-cluster-policies:1.0.1 \
   acm-policies.tgz:application/vnd.oci.image.layer.v1.tar+gzip
 
 oc -n openshift-gitops patch applicationset acm-policies --type=merge -p \
