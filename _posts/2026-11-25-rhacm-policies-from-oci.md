@@ -1,7 +1,7 @@
 ---
 title: "GitOps Without Git: Shipping RHACM Policies as OCI Artifacts"
 description: "How I package Red Hat ACM policies as an OCI artifact in Quay and let Argo CD deploy them, so hub clusters never need to reach a Git server."
-date: 2026-11-25 15:00:00 -0500
+date: 2026-11-25 14:30:00 -0500
 categories: [OpenShift, GitOps]
 tags: [openshift, rhacm, argocd, gitops, oci, policy, compliance]
 ---
